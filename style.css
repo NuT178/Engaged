@@ -1,0 +1,73 @@
+body { font-family: 'Kantumruy Pro', sans-serif; -webkit-tap-highlight-color: transparent; }
+.khmer-muol { font-family: 'Khmer OS Muol Light', serif; }
+
+.arch-bg {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+}
+
+/* Animations */
+@keyframes sway {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(3deg) translateY(-8px); }
+}
+.flower-sway { animation: sway 4s ease-in-out infinite; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.ring-pulse { animation: pulse 2s infinite; }
+
+/* Responsive Timer */
+.timer-box {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #fbcfe8;
+    border-radius: 12px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-map {
+    background: #9d174d;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 8px 15px rgba(157, 23, 77, 0.2);
+}
+
+.floating-flower { position: absolute; z-index: 5; animation: sway 3s infinite alternate; }
+.f1 { top: 40%; right: 8%; font-size: 24px; }
+.f2 { bottom: 25%; left: 8%; font-size: 20px; animation-delay: 1s; }
+.f3 { top: 25%; left: 10%; font-size: 18px; animation-delay: 1s; }
+
+/* សំរាប់អេក្រង់ទូរស័ព្ទតូចៗ */
+@media (max-height: 700px) {
+    .khmer-muol { font-size: 12px; }
+    .flower-sway img { w: 120px; }
+    .timer-box span { font-size: 16px; }
+}
+
+/* ចលនាសម្រាប់ចិញ្ចៀន */
+@keyframes ringPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.ring-animate {
+    animation: ringPulse 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* បន្ថែមស្រមោលតិចៗឱ្យមើលទៅដូច Sticker ពិត */
+.ring-animate img {
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+}
